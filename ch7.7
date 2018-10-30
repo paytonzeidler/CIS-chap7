@@ -1,0 +1,54 @@
+#input for the title
+title = input('Enter a title for the data:\n')
+print('You entered: %s' %title)
+print()
+
+#input for header 1
+header1 = input('Enter the column 1 header:\n')
+print('You entered: %s' %header1)
+print()
+
+#input for header 2
+header2 = input('Enter the column 2 header:\n')
+print('You entered: %s' %header2)
+print()
+
+#table that the items go into
+table1 = {}
+#prompt for data points
+data_point = input("Enter a data point (-1 to stop input):\n")
+
+#Errors
+
+
+#exit when -1 is used otherwise go through errors
+while data_point != '-1':
+    if ',' not in data_point:
+        print('Error: No comma in string.')
+    elif data_point.count(',') > 1:
+        print('Error: Too many commas in input')
+        # need to figure out how to strip whitespace
+    # go to this if no errors
+    else:
+        full_string = data_point.split(',')
+        string = full_string[0]
+        integer = full_string[1]
+        
+        print(full_string)
+        print('Data_string: %s' %string)
+        print('Data_integer: %s' %integer)
+    data_point = input("Enter a data point (-1 to stop input):\n")
+       
+#print out table
+def outputtable(title, header1, header2):
+    title_space = 25
+    header1_space = 0
+    header2_space = 50
+    print(' '*title_space, title)
+    print(' '*header1_space, header1, end='')
+    print(' '*header2_space, header2)
+    print('-'* 50)
+# Not sure on how to input the data into the table    
+print()
+
+outputtable(title, header1, header2)
